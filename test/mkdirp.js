@@ -1,4 +1,4 @@
-var mkdirp = require('mkdirp').mkdirp;
+var mkdirp = require('../').mkdirp;
 var path = require('path');
 var fs = require('fs');
 
