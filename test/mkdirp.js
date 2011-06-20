@@ -1,8 +1,9 @@
+var assert = require('assert');
 var mkdirp = require('../').mkdirp;
 var path = require('path');
 var fs = require('fs');
 
-exports.woo = function (assert) {
+exports.woo = function () {
     var x = Math.floor(Math.random() * Math.pow(16,4)).toString(16);
     var y = Math.floor(Math.random() * Math.pow(16,4)).toString(16);
     var z = Math.floor(Math.random() * Math.pow(16,4)).toString(16);

@@ -12,6 +12,12 @@
         "type" : "git",
         "url" : "http://github.com/substack/node-mkdirp.git"
     },
+    "scripts" : {
+        "test" : "expresso"
+    },
+    "devDependencies" : {
+        "expresso" : "0.7.x"
+    },
     "license" : "MIT/X11",
     "engines": { "node": "*" }
 }
