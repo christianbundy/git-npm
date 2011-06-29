@@ -9,8 +9,10 @@ exports.mkdirp = exports.mkdirP = function mkdirP (p, mode, f) {
     path.exists(p, function (exists) {
         if (exists) cb(null);
         else mkdirP(ps.slice(0,-1).join('/'), mode, function (err) {
-            if (err && err.errno != process.EEXIST) cb(err)
-            else fs.mkdir(p, mode, cb);
+            if (err && err.code !== 'EEXIST') cb(err)
+            else fs.mkdir(p, mode, function (err) {
+                if (err && err.code !== 'EEXIST') cb(err);
+            });
         });
     });
 };
