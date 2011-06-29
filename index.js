@@ -11,7 +11,8 @@ exports.mkdirp = exports.mkdirP = function mkdirP (p, mode, f) {
         else mkdirP(ps.slice(0,-1).join('/'), mode, function (err) {
             if (err && err.code !== 'EEXIST') cb(err)
             else fs.mkdir(p, mode, function (err) {
-                if (err && err.code !== 'EEXIST') cb(err);
+                if (err && err.code !== 'EEXIST') cb(err)
+                else cb()
             });
         });
     });
