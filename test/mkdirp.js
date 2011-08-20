@@ -1,5 +1,5 @@
 var assert = require('assert');
-var mkdirp = require('../').mkdirp;
+var mkdirp = require('../');
 var path = require('path');
 var fs = require('fs');
 

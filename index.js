@@ -1,7 +1,7 @@
 var path = require('path');
 var fs = require('fs');
 
-exports.mkdirp = exports.mkdirP = function mkdirP (p, mode, f) {
+var exports = module.exports = function mkdirP (p, mode, f) {
     var cb = f || function () {};
     if (p.charAt(0) != '/') { cb(new Error('Relative path: ' + p)); return }
     
@@ -17,3 +17,4 @@ exports.mkdirp = exports.mkdirP = function mkdirP (p, mode, f) {
         });
     });
 };
+exports.mkdirp = exports.mkdirP = module.exports;
