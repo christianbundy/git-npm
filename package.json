@@ -13,10 +13,10 @@
         "url" : "http://github.com/substack/node-mkdirp.git"
     },
     "scripts" : {
-        "test" : "expresso"
+        "test" : "node node_modules/tap/bin/tap.js test/*.js"
     },
     "devDependencies" : {
-        "expresso" : "0.7.x"
+        "tap" : "0.0.x"
     },
     "license" : "MIT/X11",
     "engines": { "node": "*" }

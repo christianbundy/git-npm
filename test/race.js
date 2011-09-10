@@ -1,9 +1,10 @@
-var assert = require('assert');
 var mkdirp = require('../').mkdirp;
 var path = require('path');
 var fs = require('fs');
+var test = require('tap').test;
 
-exports.race = function () {
+test('race', function (t) {
+    t.plan(4);
     var ps = [ '', 'tmp' ];
     
     for (var i = 0; i < 25; i++) {
@@ -11,22 +12,30 @@ exports.race = function () {
         ps.push(dir);
     }
     var file = ps.join('/');
-    mk(file);
-    mk(file);
     
-    function mk (file) {
+    var res = 2;
+    mk(file, function () {
+        if (--res === 0) t.end();
+    });
+    
+    mk(file, function () {
+        if (--res === 0) t.end();
+    });
+    
+    function mk (file, cb) {
         mkdirp(file, 0755, function (err) {
-            if (err) assert.fail(err);
+            if (err) t.fail(err);
             else path.exists(file, function (ex) {
-                if (!ex) assert.fail('file not created')
+                if (!ex) t.fail('file not created')
                 else fs.stat(file, function (err, stat) {
-                    if (err) assert.fail(err)
+                    if (err) t.fail(err)
                     else {
-                        assert.eql(stat.mode & 0777, 0755);
-                        assert.ok(stat.isDirectory(), 'target not a directory');
+                        t.equal(stat.mode & 0777, 0755);
+                        t.ok(stat.isDirectory(), 'target not a directory');
+                        if (cb) cb();
                     }
                 })
             })
         });
     }
-};
+});
