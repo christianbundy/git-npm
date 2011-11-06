@@ -30,8 +30,8 @@ test('clobber-pre', function (t) {
 test('clobber', function (t) {
     t.plan(2);
     mkdirp(file, 0755, function (err) {
-        t.ok(err)
-        t.equal(err.code, 'EEXIST');
+        t.ok(err);
+        t.equal(err.code, 'ENOTDIR');
         t.end();
     });
 });
