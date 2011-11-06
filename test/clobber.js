@@ -28,23 +28,10 @@ test('clobber-pre', function (t) {
 })
 
 test('clobber', function (t) {
+    t.plan(2);
     mkdirp(file, 0755, function (err) {
-        console.error("mkdir result", file, err)
-        if (err) t.fail(err);
-        else fs.stat(file, function (ex, stat) {
-            if (ex) t.fail('file not created')
-            else {
-                t.equal(stat.mode & 0777, 0755);
-                t.ok(stat.isDirectory(), 'target not a directory');
-                fs.stat(itw, function (er, stat) {
-                    if (er) t.fail('in the way file not there?!?')
-                    else {
-                        t.equal(stat.mode & 0777, 0755)
-                        t.ok(stat.isDirectory(), 'should be directory');
-                        t.end();
-                    }
-                });
-            }
-        });
+        t.ok(err)
+        t.equal(err.code, 'EEXIST');
+        t.end();
     });
 });

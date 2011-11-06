@@ -24,10 +24,7 @@ function mkdirP (p, mode, f) {
                     // if the stat fails, then that's super weird.
                     // let the original EEXIST be the failure reason.
                     if (er2) cb(er);
-                    else if (!stat.isDirectory()) fs.unlink(p, function (er) {
-                        if (er) cb(er);
-                        else mkdirP(p, mode, cb);
-                    });
+                    else if (!stat.isDirectory()) cb(er)
                     else if ((stat.mode & 0777) !== mode) fs.chmod(p, mode, cb);
                     else cb();
                 });
