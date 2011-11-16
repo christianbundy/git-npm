@@ -22,3 +22,11 @@ test('async perm', function (t) {
         })
     });
 });
+
+test('async root perm', function (t) {
+    mkdirp('/tmp', 0755, function (err) {
+        if (err) t.fail(err);
+        t.end();
+    });
+    t.end();
+});
