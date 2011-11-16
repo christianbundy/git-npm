@@ -34,3 +34,42 @@ function mkdirP (p, mode, f) {
         }
     });
 }
+
+mkdirP.sync = function sync (p, mode) {
+    if (typeof mode === 'string') mode = parseInt(mode, 8);
+    p = path.resolve(p);
+    
+    try {
+        fs.mkdirSync(p, mode)
+    }
+    catch (err0) {
+        switch (err0.code) {
+            case 'ENOENT' :
+                var err1 = sync(path.dirname(p), mode)
+                if (err1) throw err1;
+                else return sync(p, mode);
+                break;
+            
+            case 'EEXIST' :
+                var stat;
+                try {
+                    stat = fs.statSync(p);
+                }
+                catch (err1) {
+                    throw err0
+                }
+                if (!stat.isDirectory()) throw err0;
+                else if ((stat.mode & 0777) !== mode) {
+                    fs.chmodSync(p, mode);
+                    return null;
+                }
+                else return null;
+                break;
+            default :
+                throw err0
+                break;
+        }
+    }
+    
+    return null;
+};
