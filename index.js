@@ -64,7 +64,13 @@ mkdirP.sync = function sync (p, mode) {
                 }
                 if (!stat.isDirectory()) throw err0;
                 else if ((stat.mode & 0777) !== mode) {
-                    fs.chmodSync(p, mode);
+                    try {
+                        fs.chmodSync(p, mode);
+                    }
+                    catch (err) {
+                        if (err && err.code === 'EPERM') return null;
+                        else throw err;
+                    }
                     return null;
                 }
                 else return null;

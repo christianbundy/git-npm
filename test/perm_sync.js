@@ -22,7 +22,7 @@ test('sync perm', function (t) {
 });
 
 test('sync root perm', function (t) {
-    t.plan(2);
+    t.plan(1);
     
     var file = '/tmp';
     mkdirp.sync(file, 0755);
@@ -31,7 +31,6 @@ test('sync root perm', function (t) {
         else fs.stat(file, function (err, stat) {
             if (err) t.fail(err)
             else {
-                t.equal(stat.mode & 0777, 0755);
                 t.ok(stat.isDirectory(), 'target not a directory');
                 t.end();
             }
