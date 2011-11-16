@@ -4,6 +4,8 @@ var fs = require('fs');
 module.exports = mkdirP.mkdirp = mkdirP.mkdirP = mkdirP;
 
 function mkdirP (p, mode, f) {
+    if (mode === undefined) throw new Error('mode not specified');
+    
     var cb = f || function () {};
     if (typeof mode === 'string') mode = parseInt(mode, 8);
     p = path.resolve(p);
@@ -36,6 +38,8 @@ function mkdirP (p, mode, f) {
 }
 
 mkdirP.sync = function sync (p, mode) {
+    if (mode === undefined) throw new Error('mode not specified');
+    
     if (typeof mode === 'string') mode = parseInt(mode, 8);
     p = path.resolve(p);
     
