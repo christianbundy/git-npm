@@ -5,6 +5,10 @@ module.exports = mkdirP.mkdirp = mkdirP.mkdirP = mkdirP;
 
 function mkdirP (p, mode, f) {
     if (mode === undefined) throw new Error('mode not specified');
+    if (typeof mode === 'function') {
+        f = mode;
+        mode = 0777 & (~process.umask());
+    }
     
     var cb = f || function () {};
     if (typeof mode === 'string') mode = parseInt(mode, 8);
