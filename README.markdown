@@ -3,6 +3,8 @@ mkdirp
 
 Like `mkdir -p`, but in node.js!
 
+[![build status](https://secure.travis-ci.org/substack/node-mkdirp.png)](http://travis-ci.org/substack/node-mkdirp)
+
 example
 =======
 
