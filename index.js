@@ -3,15 +3,13 @@ var fs = require('fs');
 
 module.exports = mkdirP.mkdirp = mkdirP.mkdirP = mkdirP;
 
-function mkdirP (p, mode, f) {
+function mkdirP (p, mode, f, made) {
     if (typeof mode === 'function' || mode === undefined) {
         f = mode;
         mode = 0777 & (~process.umask());
     }
-
-    // secret passalong argument.
-    var made = arguments[3] || null;
-
+    if (!made) made = null;
+    
     var cb = f || function () {};
     if (typeof mode === 'string') mode = parseInt(mode, 8);
     p = path.resolve(p);
@@ -45,14 +43,12 @@ function mkdirP (p, mode, f) {
     });
 }
 
-mkdirP.sync = function sync (p, mode) {
+mkdirP.sync = function sync (p, mode, made) {
     if (mode === undefined) {
         mode = 0777 & (~process.umask());
     }
-
-    // secret passalong argument
-    var made = arguments[2] || null;
-
+    if (!made) made = null;
+    
     if (typeof mode === 'string') mode = parseInt(mode, 8);
     p = path.resolve(p);
 
