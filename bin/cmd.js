@@ -2,10 +2,17 @@
 
 var mkdirp = require('../');
 var minimist = require('minimist');
+var fs = require('fs');
+
 var argv = minimist(process.argv.slice(2), {
-    alias: { m: 'mode' },
+    alias: { m: 'mode', h: 'help' },
     string: [ 'mode' ]
 });
+if (argv.help) {
+    fs.createReadStream(__dirname + '/usage.txt').pipe(process.stdout);
+    return;
+}
+
 var paths = argv._.slice();
 var mode = argv.mode ? parseInt(argv.mode, 8) : undefined;
 
