@@ -25,9 +25,3 @@ test('opts.fs', function (t) {
         });
     });
 });
-
-function error (code, msg) {
-    var err = new Error(msg);
-    err.code = code;
-    return err;
-}
