@@ -51,7 +51,14 @@ function mkdirP (p, opts, f, made) {
     });
 }
 
-mkdirP.sync = function sync (p, mode, made) {
+mkdirP.sync = function sync (p, opts, made) {
+    if (!opts || typeof opts !== 'object') {
+        opts = { mode: opts };
+    }
+    
+    var mode = opts.mode;
+    var xfs = opts.fs || fs;
+    
     if (mode === undefined) {
         mode = 0777 & (~process.umask());
     }
@@ -60,14 +67,14 @@ mkdirP.sync = function sync (p, mode, made) {
     p = path.resolve(p);
 
     try {
-        fs.mkdirSync(p, mode);
+        xfs.mkdirSync(p, mode);
         made = made || p;
     }
     catch (err0) {
         switch (err0.code) {
             case 'ENOENT' :
-                made = sync(path.dirname(p), mode, made);
-                sync(p, mode, made);
+                made = sync(path.dirname(p), opts, made);
+                sync(p, opts, made);
                 break;
 
             // In the case of any other error, just see if there's a dir
@@ -76,7 +83,7 @@ mkdirP.sync = function sync (p, mode, made) {
             default:
                 var stat;
                 try {
-                    stat = fs.statSync(p);
+                    stat = xfs.statSync(p);
                 }
                 catch (err1) {
                     throw err0;
