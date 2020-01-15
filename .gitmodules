@@ -1,0 +1,3 @@
+[submodule "node_modules/pull-stream"]
+	path = node_modules/pull-stream
+	url = git@github.com:pull-stream/pull-stream.git
