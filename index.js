@@ -1,8 +1,9 @@
 const pull = require('pull-stream')
+const chalk = require('chalk');
 
 pull(
-  pull.values([1, 2, 3]),
+  pull.values(['hello', 'world']),
   pull.drain((x) => {
-    console.log(x)
+    console.log(chalk.blue(x))
   })
 )

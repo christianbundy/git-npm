@@ -1,3 +1,24 @@
 [submodule "node_modules/pull-stream"]
 	path = node_modules/pull-stream
 	url = git@github.com:pull-stream/pull-stream.git
+[submodule "vendor/chalk-3.0.0"]
+	path = vendor/chalk-3.0.0
+	url = https://github.com/chalk/chalk.git
+[submodule "vendor/pull-stream-3.6.14"]
+	path = vendor/pull-stream-3.6.14
+	url = git://github.com/pull-stream/pull-stream.git
+[submodule "vendor/ansi-styles-4.1.0"]
+	path = vendor/ansi-styles-4.1.0
+	url = https://github.com/chalk/ansi-styles.git
+[submodule "vendor/supports-color-7.1.0"]
+	path = vendor/supports-color-7.1.0
+	url = https://github.com/chalk/supports-color.git
+[submodule "vendor/color-convert-2.0.1"]
+	path = vendor/color-convert-2.0.1
+	url = https://github.com/Qix-/color-convert.git
+[submodule "vendor/has-flag-4.0.0"]
+	path = vendor/has-flag-4.0.0
+	url = https://github.com/sindresorhus/has-flag.git
+[submodule "vendor/color-name-1.1.4"]
+	path = vendor/color-name-1.1.4
+	url = ssh://git@github.com/colorjs/color-name.git
