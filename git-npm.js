@@ -45,10 +45,10 @@ const installDependencies = async (dependencies = []) => {
     let matchingTag = tags.find(tag => normalizeVersion(tag) === targetVersion)
 
     if (matchingTag == null) {
-      console.log("No matching tags!")
-      console.log(`Wanted: ${name}@${version}`)
-      console.log(`Options: ${tags.join(" ")}`)
-      console.log("Using default branch instead (sorry)")
+      console.log(`${name}: No matching tags!`)
+      console.log(`${name}: want ${version}`)
+      console.log(`${name}: have ${tags.join(" ")}`)
+      console.log(`${name}: Using default branch instead (sorry, I don't understand semver)`)
     } else {
       console.log(`${name}: checking out tag ${matchingTag}`)
       execSync(`git checkout --quiet ${matchingTag}`, {
@@ -57,8 +57,6 @@ const installDependencies = async (dependencies = []) => {
     }
 
     const packageObject = await parsePackage(targetDirPath)
-    console.log(targetDirPath)
-    console.log(packageObject.name)
 
     installDependencies(packageObject.dependencies)
     const nodeModulesDir = path.join(process.cwd(), "node_modules", name)
@@ -74,8 +72,6 @@ const installDependencies = async (dependencies = []) => {
           throw err
         }
       })
-
-    console.log(`${name}: done`)
   })
 }
 
