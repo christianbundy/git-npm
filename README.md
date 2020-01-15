@@ -9,8 +9,14 @@ Clone the repository and install dependencies **without npm**.
 ```shell
 git clone git@github.com:christianbundy/git-npm-example.git
 cd git-npm-example
-node git-npm.js
+git submodule update --init
 node index.js
+```
+
+If you want to change dependencies, edit `package.json` and run:
+
+```shell
+node git-npm.js
 ```
 
 ## License
