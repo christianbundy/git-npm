@@ -2,7 +2,10 @@
 
 This is a terrible little hack that uses Git submodules to pull your npm deps.
 
-Right now it
+I haven't built the `package.json` parser, but in the future you should be able
+to run `git-npm install` and your dependencies should be downloaded and
+installed without actually running `npm install` or downloading code from the
+npm registry.
 
 ## Usage
 
