@@ -29,13 +29,13 @@ const installDependencies = async (dependencies = []) => {
     const url = execSync(`npm view ${name} .repository.url`).toString()
     const normalized = normalizeUrl(url)
     const targetVersion = normalizeVersion(version)
-    const targetDirName = `${name}-${targetVersion}`
-    const targetDirPath = path.join(process.cwd(), "vendor", targetDirName)
+    const targetDirName = name
+    const targetDirPath = path.join(".", "node_modules", targetDirName)
 
     // TODO: Remove --force
     console.log(`${name}: adding submodule from ${normalized}`)
     execSync(
-      `git submodule add --force ${normalized} ./vendor/${name}-${targetVersion}`
+      `git submodule add --force ${normalized} ${targetDirPath}`
     )
     const tags = execSync(`git tag`, { cwd: targetDirPath })
       .toString()
@@ -81,7 +81,6 @@ const installDependencies = async (dependencies = []) => {
 
 const main = async () => {
   // TODO: Don't depend on mkdir
-  execSync(`mkdir -p ./vendor`)
   execSync(`mkdir -p ./node_modules`)
 
   const packageObject = await parsePackage(process.cwd())
