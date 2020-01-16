@@ -57,14 +57,18 @@ const installDependencies = async (dependencies = []) => {
     const packageObject = await parsePackage(targetDirPath)
 
     installDependencies(packageObject.dependencies)
-    const nodeModulesDir = path.join(process.cwd(), "node_modules", name)
+    const nodeModulesDir = path.join(process.cwd(), "node_modules")
+    const packagePath = path.join(nodeModulesDir, name)
+    const relativeTarget = path.relative(nodeModulesDir, targetDirPath)
 
-    fs.symlink(targetDirPath, nodeModulesDir)
+    fs.symlink(relativeTarget, packagePath)
       .then(() => {
         console.log(`${name}: created symlink`)
       })
       .catch(err => {
         if (err.code === "EEXIST") {
+          // TODO: overwrite symlinks
+          console.log(`${name}: cowardly refusing to overwrite file with symlink`)
           // symlink already exists
         } else {
           throw err
