@@ -82,3 +82,12 @@
 [submodule "/home/christianbundy/src/git-npm-example/.git-npm/color-name/1.1.4"]
 	path = /home/christianbundy/src/git-npm-example/.git-npm/color-name/1.1.4
 	url = ssh://git@github.com/colorjs/color-name.git
+[submodule "/home/christianbundy/src/git-npm-example/.git-npm/debug/4.1.1"]
+	path = /home/christianbundy/src/git-npm-example/.git-npm/debug/4.1.1
+	url = git://github.com/visionmedia/debug.git
+[submodule "/home/christianbundy/src/git-npm-example/.git-npm/ms/2.1.1"]
+	path = /home/christianbundy/src/git-npm-example/.git-npm/ms/2.1.1
+	url = https://github.com/zeit/ms.git
+[submodule "/home/christianbundy/src/git-npm-example/.git-npm/semver/7.1.1"]
+	path = /home/christianbundy/src/git-npm-example/.git-npm/semver/7.1.1
+	url = https://github.com/npm/node-semver.git
