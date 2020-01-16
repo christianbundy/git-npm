@@ -1,24 +1,34 @@
-# Git-npm Example
+# Git-npm
 
 This is a terrible little hack that uses Git submodules to pull your npm deps.
 
-## Usage
+## Install
 
 Clone the repository and install dependencies **without npm**.
 
 ```shell
-git clone --recurse-submodules -j8 git@github.com:christianbundy/git-npm-example.git
-cd git-npm-example
-node index.js
+git clone --recurse-submodules -j8 git@github.com:christianbundy/git-npm.git
+cd git-npm
+node test
 ```
 
-If you want to change dependencies, edit `package.json` and run:
+## Usage
 
-```shell
-node git-npm.js
+See more options with the `git-npm` command.
+
+```console
+$ ./bin/git-npm --help
+Usage: git-npm [options]
+
+Commands:
+  git-npm install           Install dependencies from package.json
+  git-npm add <moduleName>  Add a module to node_modules and package.json
+
+Options:
+  --version   Show version number                                      [boolean]
+  -h, --help  Show help                                                [boolean]
 ```
 
 ## License
 
 AGPL-3.0
-

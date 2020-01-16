@@ -5,7 +5,7 @@ const fs = require("fs").promises
 const path = require("path")
 const debug = require("debug")("git-npm")
 const mkdirp = require("mkdirp")
-const yargs = require("yargs")
+// const yargs = require("yargs")
 
 // let debug = {extend: () => () => {}}
 debug.enabled = true
@@ -44,10 +44,14 @@ const installDependencies = async (dependencies = []) => {
   Object.entries(dependencies).forEach(async ([name, version]) => {
     installModule(name, version)
   })
+  Object.entries(dependencies).forEach(async ([name, version]) => {
+    installModule(name, version)
+  })
 }
 
 const install = () => {
-  parsePackage(process.cwd()).then(({ dependencies }) => {
+  parsePackage(process.cwd()).then(({ dependencies = [], devDependencies = [] }) => {
+    installDependencies(devDependencies)
     installDependencies(dependencies)
   })
 }
@@ -61,7 +65,10 @@ const installModule = async (name, version) => {
   const targetDirPath = path.join(".git-npm", name, targetVersion)
   // TODO: Remove --force
   log(`adding submodule from ${normalized}`)
-  execSync(`git submodule add --force ${normalized} ${targetDirPath}`)
+  const isOnGitHub = normalized.indexOf('github.com/') !== -1
+  const depthString = isOnGitHub ? '--depth 1' : ''
+  
+  execSync(`git submodule add --force ${depthString} ${normalized} ${targetDirPath}`)
   const tags = execSync(`git tag`, { cwd: targetDirPath })
     .toString()
     .split("\n")
@@ -128,15 +135,15 @@ const createDirs = () => {
 }
 
 const main = async () => {
-  yargs
+  /*yargs
     .scriptName("git-npm")
     .env("GIT_NPM")
     .help("h")
     .alias("h", "help")
     .usage("Usage: $0 [options]")
     .command(
-      ["install", "$0"],
-      "Install dependencies from package.json",
+      "install",
+      "Synchronize dependencies from package.json",
       () => {},
       argv => {
         install()
@@ -151,7 +158,10 @@ const main = async () => {
         execSync(`mkdir -p ./node_modules`)
         add(argv.moduleName)
       }
-    ).argv
+    )
+		.demand(1)
+		.argv*/
 }
 
+install()
 main()
