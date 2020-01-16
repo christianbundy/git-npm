@@ -7,9 +7,8 @@ This is a terrible little hack that uses Git submodules to pull your npm deps.
 Clone the repository and install dependencies **without npm**.
 
 ```shell
-git clone git@github.com:christianbundy/git-npm-example.git
+git clone --recurse-submodules -j8 git@github.com:christianbundy/git-npm-example.git
 cd git-npm-example
-git submodule update --init
 node index.js
 ```
 
