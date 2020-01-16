@@ -7,6 +7,7 @@ const debug = require("debug")("git-npm")
 const mkdirp = require("mkdirp")
 const yargs = require("yargs")
 
+// let debug = {extend: () => () => {}}
 debug.enabled = true
 
 const parsePackage = async workingDirectory => {
@@ -57,12 +58,7 @@ const installModule = async (name, version) => {
   const url = execSync(`npm view ${name} .repository.url`).toString()
   const normalized = normalizeUrl(url)
   const targetVersion = normalizeVersion(version)
-  const targetDirPath = path.join(
-    process.cwd(),
-    ".git-npm",
-    name,
-    targetVersion
-  )
+  const targetDirPath = path.join(".git-npm", name, targetVersion)
   // TODO: Remove --force
   log(`adding submodule from ${normalized}`)
   execSync(`git submodule add --force ${normalized} ${targetDirPath}`)
@@ -109,7 +105,9 @@ const installModule = async (name, version) => {
 }
 
 const add = async name => {
-  const version = execSync(`npm view ${name} .version`).toString().trim()
+  const version = execSync(`npm view ${name} .version`)
+    .toString()
+    .trim()
   const log = debug.extend("name")
   log.enabled = true
 
@@ -125,14 +123,11 @@ const add = async name => {
 }
 
 const createDirs = () => {
-  // TODO: remove mkdir dependency
   mkdirp.sync(path.join(process.cwd(), ".git-npm"))
   mkdirp.sync(path.join(process.cwd(), "node_modules"))
 }
 
 const main = async () => {
-  // TODO: Don't depend on mkdir
-
   yargs
     .scriptName("git-npm")
     .env("GIT_NPM")
