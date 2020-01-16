@@ -19,3 +19,66 @@
 [submodule "node_modules/color-name"]
 	path = node_modules/color-name
 	url = ssh://git@github.com/colorjs/color-name.git
+[submodule ".git-npm/chalk/https:/github.com/chalk/chalk.git"]
+	path = .git-npm/chalk/https:/github.com/chalk/chalk.git
+	url = https://github.com/chalk/chalk.git
+[submodule ".git-npm/pull-stream/git:/github.com/pull-stream/pull-stream.git"]
+	path = .git-npm/pull-stream/git:/github.com/pull-stream/pull-stream.git
+	url = git://github.com/pull-stream/pull-stream.git
+[submodule ".git-npm/ansi-styles/https:/github.com/chalk/ansi-styles.git"]
+	path = .git-npm/ansi-styles/https:/github.com/chalk/ansi-styles.git
+	url = https://github.com/chalk/ansi-styles.git
+[submodule ".git-npm/supports-color/https:/github.com/chalk/supports-color.git"]
+	path = .git-npm/supports-color/https:/github.com/chalk/supports-color.git
+	url = https://github.com/chalk/supports-color.git
+[submodule ".git-npm/color-convert/https:/github.com/Qix-/color-convert.git"]
+	path = .git-npm/color-convert/https:/github.com/Qix-/color-convert.git
+	url = https://github.com/Qix-/color-convert.git
+[submodule ".git-npm/has-flag/https:/github.com/sindresorhus/has-flag.git"]
+	path = .git-npm/has-flag/https:/github.com/sindresorhus/has-flag.git
+	url = https://github.com/sindresorhus/has-flag.git
+[submodule ".git-npm/color-name/ssh:/git@github.com/colorjs/color-name.git"]
+	path = .git-npm/color-name/ssh:/git@github.com/colorjs/color-name.git
+	url = ssh://git@github.com/colorjs/color-name.git
+[submodule ".git-npm/chalk/3.0.0"]
+	path = .git-npm/chalk/3.0.0
+	url = https://github.com/chalk/chalk.git
+[submodule ".git-npm/pull-stream/3.6.14"]
+	path = .git-npm/pull-stream/3.6.14
+	url = git://github.com/pull-stream/pull-stream.git
+[submodule ".git-npm/ansi-styles/4.1.0"]
+	path = .git-npm/ansi-styles/4.1.0
+	url = https://github.com/chalk/ansi-styles.git
+[submodule ".git-npm/supports-color/7.1.0"]
+	path = .git-npm/supports-color/7.1.0
+	url = https://github.com/chalk/supports-color.git
+[submodule ".git-npm/color-convert/2.0.1"]
+	path = .git-npm/color-convert/2.0.1
+	url = https://github.com/Qix-/color-convert.git
+[submodule ".git-npm/has-flag/4.0.0"]
+	path = .git-npm/has-flag/4.0.0
+	url = https://github.com/sindresorhus/has-flag.git
+[submodule ".git-npm/color-name/1.1.4"]
+	path = .git-npm/color-name/1.1.4
+	url = ssh://git@github.com/colorjs/color-name.git
+[submodule "/home/christianbundy/src/git-npm-example/.git-npm/chalk/3.0.0"]
+	path = /home/christianbundy/src/git-npm-example/.git-npm/chalk/3.0.0
+	url = https://github.com/chalk/chalk.git
+[submodule "/home/christianbundy/src/git-npm-example/.git-npm/pull-stream/3.6.14"]
+	path = /home/christianbundy/src/git-npm-example/.git-npm/pull-stream/3.6.14
+	url = git://github.com/pull-stream/pull-stream.git
+[submodule "/home/christianbundy/src/git-npm-example/.git-npm/ansi-styles/4.1.0"]
+	path = /home/christianbundy/src/git-npm-example/.git-npm/ansi-styles/4.1.0
+	url = https://github.com/chalk/ansi-styles.git
+[submodule "/home/christianbundy/src/git-npm-example/.git-npm/supports-color/7.1.0"]
+	path = /home/christianbundy/src/git-npm-example/.git-npm/supports-color/7.1.0
+	url = https://github.com/chalk/supports-color.git
+[submodule "/home/christianbundy/src/git-npm-example/.git-npm/color-convert/2.0.1"]
+	path = /home/christianbundy/src/git-npm-example/.git-npm/color-convert/2.0.1
+	url = https://github.com/Qix-/color-convert.git
+[submodule "/home/christianbundy/src/git-npm-example/.git-npm/has-flag/4.0.0"]
+	path = /home/christianbundy/src/git-npm-example/.git-npm/has-flag/4.0.0
+	url = https://github.com/sindresorhus/has-flag.git
+[submodule "/home/christianbundy/src/git-npm-example/.git-npm/color-name/1.1.4"]
+	path = /home/christianbundy/src/git-npm-example/.git-npm/color-name/1.1.4
+	url = ssh://git@github.com/colorjs/color-name.git
