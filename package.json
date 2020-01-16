@@ -1,5 +1,5 @@
 {
-  "name": "git-npm-example",
+  "name": "git-npm",
   "version": "1.0.0",
   "description": "This is a terrible little hack that uses Git submodules to pull your npm deps.",
   "main": "index.js",
@@ -19,10 +19,19 @@
     "type": "git",
     "url": "git+https://github.com/christianbundy/git-npm-example.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Christian Bundy <christianbundy@fraction.io>",
+  "license": "AGPL-3.0",
   "bugs": {
     "url": "https://github.com/christianbundy/git-npm-example/issues"
   },
-  "homepage": "https://github.com/christianbundy/git-npm-example#readme"
+  "homepage": "https://github.com/christianbundy/git-npm-example#readme",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "git",
+    "npm",
+    "package",
+    "manager"
+  ]
 }
