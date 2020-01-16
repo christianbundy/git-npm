@@ -4,9 +4,9 @@
   "description": "This is a terrible little hack that uses Git submodules to pull your npm deps.",
   "main": "index.js",
   "dependencies": {
-    "chalk": "^3.0.0",
-    "pull-stream": "^3.6.14",
-    "debug": "4.1.1\n"
+    "debug": "4.1.1",
+    "yargs": "15.1.0",
+    "mkdirp": "0.5.1"
   },
   "devDependencies": {},
   "scripts": {

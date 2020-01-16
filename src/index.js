@@ -4,6 +4,8 @@ const { execSync } = require("child_process")
 const fs = require("fs").promises
 const path = require("path")
 const debug = require("debug")("git-npm")
+const mkdirp = require("mkdirp")
+const yargs = require("yargs")
 
 debug.enabled = true
 
@@ -27,7 +29,15 @@ const normalizeUrl = url => {
 
 // TODO: Use semver to support actual range.
 // Currently this takes ^1.2.3 and turns it into 1.2.3.
-const normalizeVersion = version => version.match(/((\d|\.)+)/)[0]
+const normalizeVersion = version => {
+  const matches = version.match(/((\d|\.)+)/)
+
+  if (matches && matches.length) {
+    return matches[0]
+  } else {
+    return null
+  }
+}
 
 const installDependencies = async (dependencies = []) => {
   Object.entries(dependencies).forEach(async ([name, version]) => {
@@ -99,7 +109,7 @@ const installModule = async (name, version) => {
 }
 
 const add = async name => {
-  const version = execSync(`npm view ${name} .version`).toString()
+  const version = execSync(`npm view ${name} .version`).toString().trim()
   const log = debug.extend("name")
   log.enabled = true
 
@@ -114,32 +124,39 @@ const add = async name => {
   )
 }
 
+const createDirs = () => {
+  // TODO: remove mkdir dependency
+  mkdirp.sync(path.join(process.cwd(), ".git-npm"))
+  mkdirp.sync(path.join(process.cwd(), "node_modules"))
+}
+
 const main = async () => {
-  let command = process.argv[2]
-
-  if (command === undefined) {
-    command = "install"
-  }
-
   // TODO: Don't depend on mkdir
-  execSync(`mkdir -p ./.git-npm`)
-  execSync(`mkdir -p ./node_modules`)
 
-  switch (command) {
-    case "install": {
-      install()
-      break
-    }
-    case "add": {
-      add(process.argv[3])
-      break
-    }
-    default: {
-      console.log(`Command not understood: ${command}`)
-      console.log("Try `git-npm install` or `git-npm add` instead.")
-      process.exit(1)
-    }
-  }
+  yargs
+    .scriptName("git-npm")
+    .env("GIT_NPM")
+    .help("h")
+    .alias("h", "help")
+    .usage("Usage: $0 [options]")
+    .command(
+      ["install", "$0"],
+      "Install dependencies from package.json",
+      () => {},
+      argv => {
+        install()
+      }
+    )
+    .command(
+      "add <moduleName>",
+      "Add a module to node_modules and package.json",
+      () => {},
+      argv => {
+        execSync(`mkdir -p ./.git-npm`)
+        execSync(`mkdir -p ./node_modules`)
+        add(argv.moduleName)
+      }
+    ).argv
 }
 
 main()
