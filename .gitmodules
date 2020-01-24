@@ -42,7 +42,8 @@
 	url = ssh://git@github.com/colorjs/color-name.git
 [submodule ".git-npm/chalk/3.0.0"]
 	path = .git-npm/chalk/3.0.0
-	url = https://github.com/chalk/chalk.git
+	url = https://github.com/christianbundy/git-npm.git
+	branch = git-npm/chalk/3.0.0
 [submodule ".git-npm/pull-stream/3.6.14"]
 	path = .git-npm/pull-stream/3.6.14
 	url = git://github.com/pull-stream/pull-stream.git
