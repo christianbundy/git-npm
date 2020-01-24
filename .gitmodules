@@ -1,118 +1,156 @@
 [submodule ".git-npm/chalk/3.0.0"]
 	path = .git-npm/chalk/3.0.0
-	url = https://github.com/christianbundy/git-npm.git
+	url = git@github.com:christianbundy/git-npm.git
 	branch = git-npm/chalk/3.0.0
 [submodule ".git-npm/pull-stream/3.6.14"]
 	path = .git-npm/pull-stream/3.6.14
-	url = git://github.com/pull-stream/pull-stream.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/pull-stream/3.6.14
 [submodule ".git-npm/ansi-styles/4.1.0"]
 	path = .git-npm/ansi-styles/4.1.0
-	url = https://github.com/chalk/ansi-styles.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/ansi-styles/4.1.0
 [submodule ".git-npm/supports-color/7.1.0"]
 	path = .git-npm/supports-color/7.1.0
-	url = https://github.com/chalk/supports-color.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/supports-color/7.1.0
 [submodule ".git-npm/color-convert/2.0.1"]
 	path = .git-npm/color-convert/2.0.1
-	url = https://github.com/Qix-/color-convert.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/color-convert/2.0.1
 [submodule ".git-npm/has-flag/4.0.0"]
 	path = .git-npm/has-flag/4.0.0
-	url = https://github.com/sindresorhus/has-flag.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/has-flag/4.0.0
 [submodule ".git-npm/color-name/1.1.4"]
 	path = .git-npm/color-name/1.1.4
-	url = ssh://git@github.com/colorjs/color-name.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/color-name/1.1.4
 [submodule ".git-npm/debug/4.1.1"]
 	path = .git-npm/debug/4.1.1
-	url = git://github.com/visionmedia/debug.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/debug/4.1.1
 [submodule ".git-npm/yargs/15.1.0"]
 	path = .git-npm/yargs/15.1.0
-	url = https://github.com/yargs/yargs.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/yargs/15.1.0
 [submodule ".git-npm/mkdirp/0.5.1"]
 	path = .git-npm/mkdirp/0.5.1
-	url = https://github.com/substack/node-mkdirp.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/mkdirp/0.5.1
 [submodule ".git-npm/ms/2.1.1"]
 	path = .git-npm/ms/2.1.1
-	url = https://github.com/zeit/ms.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/ms/2.1.1
 [submodule ".git-npm/cliui/6.0.0"]
 	path = .git-npm/cliui/6.0.0
-	url = ssh://git@github.com/yargs/cliui.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/cliui/6.0.0
 [submodule ".git-npm/decamelize/1.2.0"]
 	path = .git-npm/decamelize/1.2.0
-	url = https://github.com/sindresorhus/decamelize.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/decamelize/1.2.0
 [submodule ".git-npm/find-up/4.1.0"]
 	path = .git-npm/find-up/4.1.0
-	url = https://github.com/sindresorhus/find-up.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/find-up/4.1.0
 [submodule ".git-npm/get-caller-file/2.0.1"]
 	path = .git-npm/get-caller-file/2.0.1
-	url = https://github.com/stefanpenner/get-caller-file.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/get-caller-file/2.0.1
 [submodule ".git-npm/require-directory/2.1.1"]
 	path = .git-npm/require-directory/2.1.1
-	url = git://github.com/troygoode/node-require-directory.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/require-directory/2.1.1
 [submodule ".git-npm/require-main-filename/2.0.0"]
 	path = .git-npm/require-main-filename/2.0.0
-	url = ssh://git@github.com/yargs/require-main-filename.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/require-main-filename/2.0.0
 [submodule ".git-npm/set-blocking/2.0.0"]
 	path = .git-npm/set-blocking/2.0.0
-	url = https://github.com/yargs/set-blocking.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/set-blocking/2.0.0
 [submodule ".git-npm/string-width/4.2.0"]
 	path = .git-npm/string-width/4.2.0
-	url = https://github.com/sindresorhus/string-width.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/string-width/4.2.0
 [submodule ".git-npm/which-module/2.0.0"]
 	path = .git-npm/which-module/2.0.0
-	url = https://github.com/nexdrew/which-module.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/which-module/2.0.0
 [submodule ".git-npm/y18n/4.0.0"]
 	path = .git-npm/y18n/4.0.0
-	url = ssh://git@github.com/yargs/y18n.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/y18n/4.0.0
 [submodule ".git-npm/yargs-parser/16.1.0"]
 	path = .git-npm/yargs-parser/16.1.0
-	url = ssh://git@github.com/yargs/yargs-parser.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/yargs-parser/16.1.0
 [submodule ".git-npm/minimist/0.0.8"]
 	path = .git-npm/minimist/0.0.8
-	url = git://github.com/substack/minimist.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/minimist/0.0.8
 [submodule ".git-npm/strip-ansi/6.0.0"]
 	path = .git-npm/strip-ansi/6.0.0
-	url = https://github.com/chalk/strip-ansi.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/strip-ansi/6.0.0
 [submodule ".git-npm/wrap-ansi/6.2.0"]
 	path = .git-npm/wrap-ansi/6.2.0
-	url = https://github.com/chalk/wrap-ansi.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/wrap-ansi/6.2.0
 [submodule ".git-npm/locate-path/5.0.0"]
 	path = .git-npm/locate-path/5.0.0
-	url = https://github.com/sindresorhus/locate-path.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/locate-path/5.0.0
 [submodule ".git-npm/path-exists/4.0.0"]
 	path = .git-npm/path-exists/4.0.0
-	url = https://github.com/sindresorhus/path-exists.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/path-exists/4.0.0
 [submodule ".git-npm/emoji-regex/8.0.0"]
 	path = .git-npm/emoji-regex/8.0.0
-	url = https://github.com/mathiasbynens/emoji-regex.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/emoji-regex/8.0.0
 [submodule ".git-npm/is-fullwidth-code-point/3.0.0"]
 	path = .git-npm/is-fullwidth-code-point/3.0.0
-	url = https://github.com/sindresorhus/is-fullwidth-code-point.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/is-fullwidth-code-point/3.0.0
 [submodule ".git-npm/camelcase/5.0.0"]
 	path = .git-npm/camelcase/5.0.0
-	url = https://github.com/sindresorhus/camelcase.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/camelcase/5.0.0
 [submodule ".git-npm/ansi-regex/5.0.0"]
 	path = .git-npm/ansi-regex/5.0.0
-	url = https://github.com/chalk/ansi-regex.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/ansi-regex/5.0.0
 [submodule ".git-npm/ansi-styles/4.0.0"]
 	path = .git-npm/ansi-styles/4.0.0
-	url = https://github.com/chalk/ansi-styles.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/ansi-styles/4.0.0
 [submodule ".git-npm/string-width/4.1.0"]
 	path = .git-npm/string-width/4.1.0
-	url = https://github.com/sindresorhus/string-width.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/string-width/4.1.0
 [submodule ".git-npm/p-locate/4.1.0"]
 	path = .git-npm/p-locate/4.1.0
-	url = https://github.com/sindresorhus/p-locate.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/p-locate/4.1.0
 [submodule ".git-npm/color-convert/2.0.0"]
 	path = .git-npm/color-convert/2.0.0
-	url = https://github.com/Qix-/color-convert.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/color-convert/2.0.0
 [submodule ".git-npm/strip-ansi/5.2.0"]
 	path = .git-npm/strip-ansi/5.2.0
-	url = https://github.com/chalk/strip-ansi.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/strip-ansi/5.2.0
 [submodule ".git-npm/p-limit/2.2.0"]
 	path = .git-npm/p-limit/2.2.0
-	url = https://github.com/sindresorhus/p-limit.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/p-limit/2.2.0
 [submodule ".git-npm/ansi-regex/4.1.0"]
 	path = .git-npm/ansi-regex/4.1.0
-	url = https://github.com/chalk/ansi-regex.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/ansi-regex/4.1.0
 [submodule ".git-npm/p-try/2.0.0"]
 	path = .git-npm/p-try/2.0.0
-	url = https://github.com/sindresorhus/p-try.git
+	url = git@github.com:christianbundy/git-npm.git
+	branch = git-npm/p-try/2.0.0

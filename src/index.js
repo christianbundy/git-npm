@@ -62,6 +62,7 @@ const installModule = async (name, version) => {
   const normalized = normalizeUrl(url)
   const targetVersion = normalizeVersion(version)
   const targetDirPath = path.join(".git-npm", name, targetVersion)
+  const targetDirName = targetDirPath.slice(1)
   // TODO: Remove --force
   log(`adding submodule from ${normalized}`)
   const isOnGitHub = normalized.indexOf("github.com/") !== -1
@@ -88,6 +89,14 @@ const installModule = async (name, version) => {
       cwd: targetDirPath
     })
   }
+
+  execSync(`git checkout -b ${targetDirName}`, {
+    cwd: targetDirPath
+  })
+
+  execSync(`git push git@github.com:christianbundy/git-npm.git ${targetDirName}`, {
+    cwd: targetDirPath
+  })
 
   const packageObject = await parsePackage(targetDirPath)
 
