@@ -4,7 +4,7 @@
   "description": "This is a terrible little hack that uses Git submodules to pull your npm deps.",
   "main": "index.js",
   "dependencies": {
-    "debug": "4.1.1",
+    "debug": "4.3.1",
     "yargs": "15.1.0",
     "mkdirp": "0.5.1"
   },
